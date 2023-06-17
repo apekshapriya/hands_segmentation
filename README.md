@@ -174,7 +174,7 @@ The sample output from the best checkpoint are shown below:
 <img src="https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video1_img_0011.png" alt="Alt text" title="sample_output1">
 
 
-![sample_output_1](test_output/sample_video1_img_0011.png)
+![sample_output_1](https://drive.google.com/file/d/1xE3lmOnOUnqzc8esWCVnPqHvDBur0dZ0/view?usp=drive_link)
 
 
 ![smple_output_2](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video1_img_0013.png)
