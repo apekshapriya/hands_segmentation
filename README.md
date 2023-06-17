@@ -99,7 +99,7 @@ To create the dataset:
 
 ```python
 
-$ python gen_coco_format.py  --epick_visor_store ../dataset  --num 1  --copy_img  --split train --mode handonly  --unzip_img
+$ python convert_visor_to_hands_seg_format.py  --epick_visor_store ../dataset  --num 1  --copy_img  --split train --mode handonly  --unzip_img
     
 ```
 This would create the folder structure as:
@@ -198,8 +198,7 @@ The sample output from the best checkpoint are shown below:
 We can see that model is able to pick up the hand patterns but faces problem when objects of similar color shade to that of human hands come into picture. Also fails to pick-up when a totally different shade to that of human hand, like gloves.
 
 
-Experiment Tracking and metrics:
+## Experiment Tracking and metrics:
 
-All the training logs and metrics of the experiment that gave best results are sharedt [here](https://drive.google.com/drive/folders/1JOtbVFlDaT3o7zouKz47j-fND0DmQvcz?usp=sharing).
+All the training logs and metrics of the best model are logged in tensorboard and can be accessed from [here](https://drive.google.com/drive/folders/1JOtbVFlDaT3o7zouKz47j-fND0DmQvcz?usp=sharing).
 
-It can be seen by following command
