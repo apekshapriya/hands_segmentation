@@ -45,17 +45,15 @@ The pretrained model taken from the referred repo was trained on following datas
     HandOverFace
     GTEA
 
-The new dataset having numerous cooking activities images was added to finetune the pretrained checkpoint:
+The new dataset EPIC-KITCHEN-100 having numerous cooking activities images was added to finetune the pretrained checkpoint:
     
-    EPIC-KITCHEN-100 
+ 
 
-
-
-Being the very huge dataset, some samples were randomly chosen from the dataset and the annotations were converted to masked images.
+Being very huge dataset, some samples were randomly chosen from the dataset and the annotations were converted to masked images.
 
 To create the dataset:
 
-    Choose the samples from https://epic-kitchens.github.io/2023 and keep in the following structure:
+    Choose nd dowload the samples from https://epic-kitchens.github.io/2023 and keep in the following structure:
     
     dataset:
         annotations:
@@ -95,27 +93,44 @@ To create the dataset:
             
 
 
-    and run the below command to create the masks and images.
+    Now run the below command to create the masks and images.
 
-    cd hand_segmenter
-    gen_coco_format.py  --epick_visor_store ../dataset  --num 1  --copy_img  --split train --mode handonly  --unzip_img
+    $ cd hand_segmenter
+
+```python
+
+$ python gen_coco_format.py  --epick_visor_store ../dataset  --num 1  --copy_img  --split train --mode handonly  --unzip_img
+    
+```
+This would create the folder structure as:
+    
+    data:
+        epick_dataset
+            img 
+                frame1.jpg
+                .........
+                frame10.jpg
+            masks
+                frame1.jpg
+                ..........
+                frame10.jpg
 
 
+#### Note: 
 
-### Note: 
 Very few samples were taken because of the limited resources and time. If we want to better the model furthermore, the dataset can be used wisely.
 
 ## Model
 
-The finetuned model's checkpoint can be downloaded from here:
+The finetuned model's checkpoint can be downloaded from [here](https://drive.google.com/drive/folders/1JOtbVFlDaT3o7zouKz47j-fND0DmQvcz?usp=sharing).
 
 
 The model is based on architecture of DeepLabV3 with resnet50 backbone model originaly trained on COCO dataset for seemantic segmentation. This model is chosen after thorough research and comparison of other pretrained models and repositories.
 
-The training logs for the best model is given in the log dir
+The training logs for the best model is given in the log dir.
 
 
-## To get the Predictions from the model on test images:
+### To get the Predictions from the model on test images:
 
 #### Update the following args in config.py
 
@@ -156,12 +171,12 @@ link
 
 The sample output from the best checkpoint are shown below:
 
-![](test_output/sample_video_img_0011.png?raw=true)
+![sample_output_1](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video_img_0011.png?raw=true)
 
 
-![](test_output/sample_video_img_0012.png?raw=true)
+![smple_output_2](test_output/sample_video_img_0012.png?raw=true)
 
-![](test_output /sample_video_img_0132.png?raw=true)
+![sample_output_3](test_output /sample_video_img_0132.png?raw=true)
 
 
 
@@ -169,3 +184,7 @@ The sample output from the best checkpoint are shown below:
 ### Note:
 
 The model faces problem when objects of similar color shade to that of human hands come into picture.
+
+
+Experiment Tracking and metrics:
+
