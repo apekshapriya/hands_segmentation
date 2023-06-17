@@ -182,10 +182,12 @@ def main(args):
             preds_overlay[preds==255] = (255,255,255)
 
             
-            added_image = cv2.addWeighted(img_src,0.7,preds_overlay, 0.5,0)
+            added_image = cv2.addWeighted(img_src,0.5,preds_overlay, 0.8,0)
+            added_image = cv2.cvtColor(added_image, cv2.COLOR_BGR2RGB)
 
-            
-            cv2.imwrite(f'{args.predictions_path}/{name}.png', added_image)
+            added_image = Image.fromarray(added_image, 'RGB')
+            # cv2.imwrite(f'{args.predictions_path}/{name}.png', added_image)
+            added_image.save(f'{args.predictions_path}/{name}.png')
     else:
         raise Exception(f'Error. Mode "{args.mode}" is not supported.')
 
