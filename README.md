@@ -167,18 +167,25 @@ The config file is given to configure paths and models hyperparameters
 
 The results of the two test folders are given here:
 
-link
+
 
 The sample output from the best checkpoint are shown below:
 
 
 
-![sample_output_1](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video1_img_0011.png)
+![sample_output1_vid1](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video1_img_0011.png)
 
 
-![smple_output_2](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video1_img_0013.png)
+![smple_output2_vid1](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video1_img_0013.png)
 
-![sample_output_3](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video1_img_0132.png)
+![sample_output3_vid1](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video1_img_0132.png)
+
+![sample_output1_vid2](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video2_img_0153.png)
+
+
+![smple_output2_vid2](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video2_img_0267.png)
+
+![sample_output3_vid3](https://github.com/apekshapriya/hands_segmentation/blob/master/test_output/sample_video2_img_0352.png)
 
 
 
