@@ -45,15 +45,15 @@ The pretrained model taken from the referred repo was trained on following datas
     HandOverFace
     GTEA
 
-The new dataset EPIC-KITCHEN-100 having numerous cooking activities images was added to finetune the pretrained checkpoint:
+The new dataset EPIC-KITCHEN-100 having numerous cooking activities images is added to finetune the pretrained checkpoint:
     
  
 
-Being very huge dataset, some samples were randomly chosen from the dataset and the annotations were converted to masked images.
+Being very huge dataset, some samples a rarendomly chosen from the dataset and the annotations are converted to masked images.
 
 To create the dataset:
 
-    Choose nd dowload the samples from https://epic-kitchens.github.io/2023 and keep in the following structure:
+    Choose and dowload the samples from https://epic-kitchens.github.io/2023 and keep in the following structure:
     
     dataset:
         annotations:
@@ -122,15 +122,17 @@ Very few samples were taken because of the limited resources and time. If we wan
 
 ## Model
 
+
 The finetuned model's checkpoint can be downloaded from [here](https://drive.google.com/drive/folders/1JOtbVFlDaT3o7zouKz47j-fND0DmQvcz?usp=sharing).
 
 
-The model is based on architecture of DeepLabV3 with resnet50 backbone model originaly trained on COCO dataset for seemantic segmentation. This model is chosen after thorough research and comparison of other pretrained models and repositories.
-
-The training logs for the best model is given in the log dir.
+The model is based on architecture of DeepLabV3 with resnet50 backbone originaly trained on COCO dataset for seemantic segmentation. This model is chosen after thorough research and comparison of other pretrained models and repositories.
 
 
-### To get the Predictions from the model on test images:
+#### Note
+The config file is given to configure paths and models hyperparameters for prediction, training and testing.
+
+## Predictions from the model on test images:
 
 #### Update the following args in config.py
 
@@ -153,7 +155,7 @@ $ python main.py
 
     mode="train"
     data_base_path="../datasets"
-    model_checkpoint= "../logs/checkpoints/epoch=0-step=1067.ckpt"
+    model_checkpoint= "<any pretrained checkpoint path>"
     model_pretrained=True
 
     Update other hyperparameters if required
@@ -163,9 +165,10 @@ $ python main.py
 ```python
 $ python main.py 
 ```
-The config file is given to configure paths and models hyperparameters
 
-The results of the two test folders are given here:
+
+
+
 
 
 
@@ -190,10 +193,13 @@ The sample output from the best checkpoint are shown below:
 
 
 
-### Note:
+#### Note:
 
-The model faces problem when objects of similar color shade to that of human hands come into picture.
+We can see that model is able to pick up the hand patterns but faces problem when objects of similar color shade to that of human hands come into picture. Also fails to pick-up when a totally different shade to that of human hand, like gloves.
 
 
 Experiment Tracking and metrics:
 
+All the training logs and metrics of the experiment that gave best results are sharedt [here](https://drive.google.com/drive/folders/1JOtbVFlDaT3o7zouKz47j-fND0DmQvcz?usp=sharing).
+
+It can be seen by following command
