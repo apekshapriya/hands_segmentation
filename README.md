@@ -1,6 +1,6 @@
 # Hands Segmentation for cooking activities
 
-This code base is cloned from this repo https://github.com/guglielmocamporese/hands-segmentation-pytorch and is adapted to train on EPICK-KITCHENS-100 dataset.
+This codebase is cloned from this repo https://github.com/guglielmocamporese/hands-segmentation-pytorch and is adapted to train on EPICK-KITCHENS-100 dataset.
 
 
 
