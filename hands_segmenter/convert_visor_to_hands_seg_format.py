@@ -57,17 +57,12 @@ if __name__ == '__main__':
     
 
     save_folder = 'epick_dataset'
-    #
     visor_annot_dir = f'{args.epick_visor_store}/annotations'
     visor_img_dir   = f'{args.epick_visor_store}/rgb_frames'
     
     epick_visor_coco_dir = f'../datasets/{save_folder}'
-    # #
-    # epick_visor_img_dir = f'../datasets/{save_folder}/img'
-    # epick_visor_mask_dir = f'../datasets/{save_folder}/mask'
-    # os.makedirs(epick_visor_img_dir, exist_ok=True)
-    # os.makedirs(epick_visor_mask_dir, exist_ok=True)
     
+
     for dir in ['train', 'val', 'test', 'annotations']: 
         if dir in ['train', 'val', 'test']:
         
@@ -113,9 +108,6 @@ if __name__ == '__main__':
         json_ls.sort()
         print(f'#({split} json) = {len(json_ls)}')
         
-        # prepare coco format annotation
-        # if args.num is not None:
-        #     json_ls = json_ls[args.num:]
         
         print(json_ls)
         # fwrite
@@ -167,9 +159,6 @@ if __name__ == '__main__':
             with open(json_path, 'r') as f:
                 v_annotations = json.load(f)['video_annotations']
                 v_annotations = sorted(v_annotations, key=lambda k: k['image']['image_path'])
-
-                # sample = Image.open( os.path.join(img_dir, v_annotations[0]['image']['name'] ))
-                # w, h = int(sample.size[0]), int(sample.size[1])
 
                     
                 for item in v_annotations:
@@ -564,13 +553,7 @@ if __name__ == '__main__':
                     # add image   
                     img_id += 1
                     img_ls.append(img_item)
-                    # copy image to corresponding folder in COCO format version (use solflink if there is space limit concern)
-                    # if args.copy_img:
-                    #     old_img_path = os.path.join(img_dir, img_name)
-                    #     new_img_path = os.path.join(f'{epick_visor_img_dir}', img_name)
-                    #     shutil.copy(old_img_path, new_img_path)
-                        
-                    # pdb.set_trace()
+                    
                     
         # category                
         if args.mode == 'handonly':

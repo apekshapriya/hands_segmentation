@@ -3,9 +3,6 @@ import numpy as np
 import glob
 import os
 
-# frameSize = (500, 500)
-
-dirs = "/data/valid/"
 
 def create_video_dirs(dirs):
 
@@ -39,7 +36,7 @@ def create_video_single_dir(dir):
 
     height, width, _ = sample.shape
 
-    video=cv2.VideoWriter(os.path.join(dir + 'video_1_out.avi'),cv2.VideoWriter_fourcc(*'DIVX'),10,(width,height))
+    video=cv2.VideoWriter(os.path.join(dir ,'video_2_out.avi'),cv2.VideoWriter_fourcc(*'DIVX'),10,(width,height))
 
     for file in files:
 
@@ -56,5 +53,5 @@ def create_video_single_dir(dir):
     video.release()
 
 
-dir = "/media/apeksha/DATA1/Video-Classification/data/version_12/"
+dir = ""
 create_video_single_dir(dir)

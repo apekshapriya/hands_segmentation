@@ -18,14 +18,14 @@ This code base is cloned from this repo https://github.com/guglielmocamporese/ha
 ```python
 $ git clone https://github.com/apekshapriya/hands_segmentation.git 
 
-$ cd HANDS_SEGMENTATION 
+$ cd hands_segmentation/
 ```
 
 ### Create a new environment through venv and activate it
 
 ``` python
 $ python3 -m venv venv_hs
-$ source venv/bin/activate
+$ source venv_hs/bin/activate
 ``` 
 
 ### Further, all the dependencies are listed in requirements.txt and can be installed by:
@@ -151,6 +151,8 @@ $ python main.py
 
 ## Finetuning the model
 
+The pretrained model is taken from the referred repo and then is fined tuned on EpicKitchen dataset
+
 #### Update the following args in config.py
 
     mode="train"
@@ -165,11 +167,6 @@ $ python main.py
 ```python
 $ python main.py 
 ```
-
-
-
-
-
 
 
 The sample output from the best checkpoint are shown below:
@@ -202,3 +199,8 @@ We can see that model is able to pick up the hand patterns but faces problem whe
 
 All the training logs and metrics of the best model are logged in tensorboard and can be accessed from [here](https://drive.google.com/drive/folders/1JOtbVFlDaT3o7zouKz47j-fND0DmQvcz?usp=sharing).
 
+
+
+## Results for tthe wo test videos
+
+Results of hand-segmentation for two videos are share [here](https://drive.google.com/drive/folders/1V-m2WzqGvPoUXh4KOF_k05fxlT-07oCM?usp=sharing).
