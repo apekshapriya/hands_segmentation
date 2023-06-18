@@ -49,7 +49,7 @@ The new dataset EPIC-KITCHEN-100 having numerous cooking activities images is ad
     
  
 
-Being very huge dataset, some samples a rarendomly chosen from the dataset and the annotations are converted to masked images.
+Being very huge dataset, some samples a randomly chosen from the dataset and the annotations are converted to masked images.
 
 To create the dataset:
 
